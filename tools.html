@@ -1,188 +1,559 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1120">
   <meta name="theme-color" content="#f7fbff">
   <title>ابزارها | Funland</title>
+
   <link rel="icon" type="image/png" href="https://github.com/Ramtiossinbiki4444444/funland/blob/main/31e1d8bc-f0ca-4530-b1a4-ce16da108147.png?raw=true">
+
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    /* تنظیمات پایه */
-    :root{--blue:#258ee8;--blue-dark:#176db8;--navy:#102c49;--line:#e4eef7;--pale:#edf7ff}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Vazirmatn',Tahoma,sans-serif;color:var(--navy);background:radial-gradient(ellipse at 50% 0%,#eaf6ff 0,rgba(234,246,255,0) 42%),#f9fcff;min-height:100vh;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    
-    /* کانتینر اصلی - اصلاح شده برای موبایل */
-    .page{width:100%;max-width:1120px;margin:0 auto;padding:0 16px;position:relative}
-    
+    :root {
+      --blue: #258ee8;
+      --blue-dark: #176db8;
+      --navy: #102c49;
+      --line: #e4eef7;
+      --pale: #edf7ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      min-width: 1120px;
+    }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      color: var(--navy);
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          #eaf6ff 0,
+          rgba(234,246,255,0) 42%
+        ),
+        #f9fcff;
+      min-height: 100vh;
+      min-width: 1120px;
+      overflow-x: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* کانتینر اصلی */
+
+    .page {
+      width: 1120px;
+      min-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+
     /* هدر */
-    .topbar{height:80px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5;margin-bottom:10px}
-    .brand{display:flex;align-items:center;gap:10px;flex-direction:row} /* کنار هم در موبایل */
-    .brand img{width:45px;height:45px;object-fit:contain;border-radius:14px;filter:drop-shadow(0 8px 15px rgba(36,137,219,.13))}
-    .brand span{font-size:14px;font-weight:900;letter-spacing:.2px}
-    .back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#637b91;font-size:12px;font-weight:700;transition:.2s}
-    .back:hover{border-color:#b9dcf8;color:var(--blue-dark)}
-    .back svg{width:14px;height:14px}
+
+    .topbar {
+      height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 5;
+      margin-bottom: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 17px;
+      filter: drop-shadow(0 8px 15px rgba(36,137,219,.13));
+    }
+
+    .brand span {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .back {
+      position: absolute;
+      right: 0;
+      top: 29px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: #637b91;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .back:hover {
+      border-color: #b9dcf8;
+      color: var(--blue-dark);
+    }
+
+    .back svg {
+      width: 16px;
+      height: 16px;
+    }
 
     /* هیرو */
-    .hero{display:flex;align-items:center;justify-content:center;text-align:center;padding:20px 0 30px}
-    .hero-content{position:relative;z-index:2;max-width:720px;width:100%}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid #d9ecfc;background:rgba(255,255,255,.72);border-radius:100px;color:#4389c2;font-size:12px;font-weight:800}
-    .eyebrow i{width:6px;height:6px;border-radius:50%;background:#55a9ef}
-    h1{font-size:32px;line-height:1.4;letter-spacing:-1px;margin:20px 0 15px;font-weight:900;color:#153653}
-    h1 span{color:var(--blue);position:relative;white-space:nowrap}
-    h1 span:after{content:'';position:absolute;right:2px;left:0;bottom:2px;height:6px;border-radius:10px;background:#d5ebff;z-index:-1}
-    .lead{font-size:14px;line-height:2;color:#71879b;max-width:560px;margin:0 auto;padding:0 10px}
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 0 30px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid #d9ecfc;
+      background: rgba(255,255,255,.72);
+      border-radius: 100px;
+      color: #4389c2;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .eyebrow i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #55a9ef;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.4;
+      letter-spacing: -1px;
+      margin: 30px 0 15px;
+      font-weight: 900;
+      color: #153653;
+    }
+
+    h1 span {
+      color: var(--blue);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    h1 span:after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      left: 0;
+      bottom: 2px;
+      height: 6px;
+      border-radius: 10px;
+      background: #d5ebff;
+      z-index: -1;
+    }
+
+    .lead {
+      font-size: 16px;
+      line-height: 2;
+      color: #71879b;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
 
     /* بخش ابزارها */
-    .tools-section{padding:10px 0 50px;text-align:center}
-    .tools-section h2{font-size:24px;font-weight:900;color:var(--navy);margin-bottom:25px}
-    
+
+    .tools-section {
+      padding: 10px 0 50px;
+      text-align: center;
+    }
+
+    .tools-section h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 25px;
+    }
+
     /* گرید ابزارها */
-    .tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .tool-card{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9);border-radius:20px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 15px rgba(37,103,157,.04);text-decoration:none;transition:transform 0.2s;}
-    .tool-card:active{transform:scale(0.97)}
-    
-    .tool-img-wrapper{width:65px;height:65px;margin-bottom:12px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,#ffffff 0%,#f0f8ff 100%);box-shadow:inset 0 2px 5px rgba(255,255,255,0.8),0 5px 15px rgba(37,103,157,0.08)}
-    .tool-img-wrapper img{width:75%;height:75%;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(37,103,157,0.15))}
-    
-    .tool-card h3{margin:0 0 12px;font-size:13px;font-weight:800;color:var(--navy)}
-    .tool-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:6px 12px;border-radius:10px;background:var(--pale);color:var(--blue-dark);font-size:11px;font-weight:800;width:100%;margin-top:auto}
-    .tool-btn svg{width:12px;height:12px}
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: rgba(255,255,255,.6);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 24px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(37,103,157,.04);
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(37,103,157,.10);
+    }
+
+    .tool-card:active {
+      transform: scale(.97);
+    }
+
+    .tool-img-wrapper {
+      width: 85px;
+      height: 85px;
+      margin-bottom: 16px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f0f8ff 100%
+      );
+      box-shadow:
+        inset 0 2px 5px rgba(255,255,255,.8),
+        0 5px 15px rgba(37,103,157,.08);
+    }
+
+    .tool-img-wrapper img {
+      width: 75%;
+      height: 75%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(37,103,157,.15));
+    }
+
+    .tool-card h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .tool-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: var(--pale);
+      color: var(--blue-dark);
+      font-size: 14px;
+      font-weight: 800;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .tool-btn svg {
+      width: 12px;
+      height: 12px;
+    }
 
     /* فوتر */
-    .bottom{display:flex;flex-direction:column;align-items:center;gap:8px;border-top:1px solid #e8f0f7;padding:20px 0 30px;color:#9aabba;font-size:11px;text-align:center}
-    .bottom a{color:#6e91ad;font-weight:700}
-    
-    /* دکورها (فقط در دسکتاپ نمایش داده می‌شوند تا موبایل شلوغ نشود) */
-    .decor{display:none}
 
-    /* ======= ریسپانسیو برای تبلت و دسکتاپ ======= */
-    @media(min-width:640px){
-      .page{padding:0 24px}
-      .topbar{height:94px;justify-content:center;margin-bottom:0}
-      .brand{flex-direction:column}
-      .brand img{width:54px;height:54px;border-radius:17px}
-      .brand span{font-size:16px}
-      .back{position:absolute;right:0;top:29px;padding:10px 15px;font-size:13px}
-      .back svg{width:16px;height:16px}
-      h1{font-size:56px;margin:30px 0 15px}
-      .lead{font-size:16px}
-      .tools-grid{grid-template-columns:repeat(3,1fr);gap:20px}
-      .tool-card{padding:24px 20px;border-radius:24px}
-      .tool-img-wrapper{width:85px;height:85px;margin-bottom:16px}
-      .tool-card h3{font-size:16px}
-      .tool-btn{padding:10px 20px;font-size:14px}
-      .bottom{flex-direction:row;justify-content:space-between;font-size:12px}
-      .decor{display:block;position:absolute;pointer-events:none;border:1px solid rgba(170,211,242,.55);border-radius:50%}
-      .decor.a{width:250px;height:250px;right:-170px;top:210px}
-      .decor.b{width:180px;height:180px;left:-130px;top:390px}
+    .bottom {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-top: 1px solid #e8f0f7;
+      padding: 20px 0 30px;
+      color: #9aabba;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .bottom a {
+      color: #6e91ad;
+      font-weight: 700;
+    }
+
+    /* دکورها */
+
+    .decor {
+      display: block;
+      position: absolute;
+      pointer-events: none;
+      border: 1px solid rgba(170,211,242,.55);
+      border-radius: 50%;
+    }
+
+    .decor.a {
+      width: 250px;
+      height: 250px;
+      right: -170px;
+      top: 210px;
+    }
+
+    .decor.b {
+      width: 180px;
+      height: 180px;
+      left: -130px;
+      top: 390px;
     }
   </style>
 </head>
+
 <body>
+
   <div class="page">
+
     <div class="decor a"></div>
     <div class="decor b"></div>
-    
+
     <header class="topbar">
+
       <a class="brand" href="index.html">
-        <img src="https://github.com/Ramtiossinbiki4444444/funland/blob/main/31e1d8bc-f0ca-4530-b1a4-ce16da108147.png?raw=true" alt="لوگوی فان‌لند">
+        <img
+          src="https://github.com/Ramtiossinbiki4444444/funland/blob/main/31e1d8bc-f0ca-4530-b1a4-ce16da108147.png?raw=true"
+          alt="لوگوی فان‌لند"
+        >
         <span>FUNLAND</span>
       </a>
+
       <a class="back" href="index.html">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
         بازگشت
       </a>
+
     </header>
-    
+
     <main class="hero">
+
       <div class="hero-content">
-        <div class="eyebrow"><i></i> فضای اختصاصی فان‌لند</div>
-        <h1>اینجا قراره<br><span>اتفاق‌های جالبی</span> بیفته.</h1>
-        <p class="lead">یک فضای تازه برای تجربه‌های آنلاین، ایده‌های خلاقانه و سرگرمی‌های متفاوت. یکی از ابزارهای زیر رو انتخاب کن!</p>
+
+        <div class="eyebrow">
+          <i></i>
+          فضای اختصاصی فان‌لند
+        </div>
+
+        <h1>
+          اینجا قراره<br>
+          <span>اتفاق‌های جالبی</span> بیفته.
+        </h1>
+
+        <p class="lead">
+          یک فضای تازه برای تجربه‌های آنلاین، ایده‌های خلاقانه و سرگرمی‌های متفاوت.
+          یکی از ابزارهای زیر رو انتخاب کن!
+        </p>
+
       </div>
+
     </main>
 
     <section class="tools-section">
+
       <h2>ابزارهای فان لند</h2>
+
       <div class="tools-grid">
-        
+
         <a href="dice.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/dice.jpg" alt="تاس سه بعدی"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/dice.jpg" alt="تاس سه بعدی">
+          </div>
           <h3>تاس سه بعدی</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="fantasy.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/Fantasy.jpg" alt="اسم فانتزی"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/Fantasy.jpg" alt="اسم فانتزی">
+          </div>
           <h3>اسم فانتزی</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="love.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/lovetest.jpg" alt="ماشین حساب عشق"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/lovetest.jpg" alt="ماشین حساب عشق">
+          </div>
           <h3>ماشین حساب عشق</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="memory.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/memory.jpg" alt="بازی حافظه"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/memory.jpg" alt="بازی حافظه">
+          </div>
           <h3>بازی حافظه</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="personality.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/brain.jpg" alt="تست شخصیت"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/brain.jpg" alt="تست شخصیت">
+          </div>
           <h3>تست شخصیت</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="piano.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/piano.jpg" alt="پیانو"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/piano.jpg" alt="پیانو">
+          </div>
           <h3>پیانو</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="reaction.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/speedtest.jpg" alt="آزمون واکنش"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/speedtest.jpg" alt="آزمون واکنش">
+          </div>
           <h3>آزمون واکنش</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="rps.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/hand.jpg" alt="سنگ کاغذ قیچی"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/hand.jpg" alt="سنگ کاغذ قیچی">
+          </div>
           <h3>سنگ کاغذ قیچی</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="slot.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/slot.jpg" alt="ماشین شانس"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/slot.jpg" alt="ماشین شانس">
+          </div>
           <h3>ماشین شانس</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
-        
+
         <a href="wheel.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/circle.jpg" alt="گردونه شانس"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/circle.jpg" alt="گردونه شانس">
+          </div>
           <h3>گردونه شانس</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
 
         <a href="word.html" class="tool-card">
-          <div class="tool-img-wrapper"><img src="assets/pics/word.jpg" alt="نقشه ی جهان"></div>
+          <div class="tool-img-wrapper">
+            <img src="assets/pics/word.jpg" alt="نقشه جهان">
+          </div>
           <h3>نقشه جهان</h3>
-          <div class="tool-btn">شروع <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="tool-btn">
+            شروع
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
 
       </div>
+
     </section>
 
     <footer class="bottom">
       <span>© 2026 Funland</span>
       <span>ساخته‌شده برای لحظه‌های متفاوت</span>
     </footer>
+
   </div>
+
 </body>
 </html>
